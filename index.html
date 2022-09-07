@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <title></title>
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/schools.css" rel="stylesheet">
+  <link href="css/non-responsive.css" rel="stylesheet">
+<style>
+/* .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+} */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  padding:10px;
+  /* width: 1150px; */
+  width: 1140px;
+    height: 120px;
+    background: #292f36;
+    position: fixed;
+    z-index: 10;
+    opacity:0.7;
+}
+
+.sticky + .content {
+  /* padding-top: 102px; */
+  color: white;
+    font-size: 2rem;
+    line-height: 60px;
+    /* position: absolute; */
+    top: 350px;
+    left: 2%;
+    visibility: hidden;
+}
+
+
+.visible-title {
+    visibility: visible;
+}
+
+
+</style>
+  </head>
+
+  <body>
+  
+      
+    <div class="container" id="container">
+      <h1>UK Accidents vs Transportations</h1>
+     
+
+
+        <!-- <select class="" autocomplete = "off" id="mySelecttwo" onchange="myFunction()">
+            <option value="Car">Car</option>
+            <option value="Bus/coach">Bus</option>
+            <option value="Motorcycle">Motorcycle</option>
+            <option value="Bicycle">Bicycle</option>
+            <option value="National rail">National rail</option>
+            <option value="Other rail">Other rail</option>
+            <option value="All rail">All rail</option>
+            <option value="Walk">Walk</option>
+            <option value="Other modes">Other modes</option>
+               </select>
+            
+            <select class="" id="mySelect" autocomplete = "off" onchange="myFunction()">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+               
+              </select> -->
+           <!-- <br><br> -->
+          
+     <p>The correlation between the number of accidents in a region and the # of transportation in the region is ____. There is a very slight relationship between a _____________.</p>
+      <div id="overlay"></div>
+      <br>
+  
+      <!-- <div class="header" id="myHeader"> -->
+          <nav class="header" id="myHeader">
+         
+          
+      <div class="slider">
+          <input type="range" min="2014" max="2016" step="1" value="2014" autocomplete="off" class="slider" id="myRange" onchange="myFunction()">
+        </div>
+
+        <ul class="range-labels">
+            <li class="active selected">2014</li>
+            <li>2015</li>
+            <li>2016</li>
+        
+          </ul>
+
+          <br><br>
+          <div class="slidertwo">
+              <input type="range" min="1" max="9" step="1" value="1" autocomplete="off" class="slidertwo" id="myRangeTwo" onchange="myFunction()">
+            </div>
+
+            <ul class="range-labelstwo">
+                <li class="active selected">Car</li>
+                <li>Bus</li>
+                <li>Motorcycle</li>
+                <li>Bicycle</li>
+                <li>National rail</li>
+                <li>Other rail</li>
+                <li>All rail</li>
+                <li>Walk</li>
+                <li>Other modes</li>
+            
+              </ul>
+
+              <br><br> 
+            <!-- </div> -->
+
+          </nav>
+
+          <div class="containertwo">
+      <div id="map"></div>
+
+<div id="graphic"></div>
+<div id="graphictwo"></div>
+<div id="state" align ="center"></div>
+</div>
+</div>
+     <script>
+        // $(window).scroll(function(){
+        //     if ($(window).scrollTop() <= 100) {
+        //         $('nav').addClass('fixed-header');
+        //         $('nav div').addClass('visible-title');
+        //     }
+        //     else {
+        //         $('nav').removeClass('fixed-header');
+        //         $('nav div').removeClass('visible-title');
+        //     }
+        // });
+
+        window.onscroll = function() {scFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function scFunction() {
+  if (window.pageYOffset > sticky + 150) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+        </script>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/d3/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>
